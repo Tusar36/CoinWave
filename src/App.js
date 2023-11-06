@@ -23,6 +23,13 @@ function App() {
     },
   };
   const News_url = "https://cryptocurrency-news2.p.rapidapi.com/v1/coindesk";
+  const Noptions = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'f09e3798b1msh149bd36751234fcp12cc11jsn539bb3254364',
+      'X-RapidAPI-Host': 'cryptocurrency-news2.p.rapidapi.com'
+    }
+  };
   let [result, setResult] = useState();
 
   let [falg, setFlag] = useState(false);
@@ -35,7 +42,7 @@ function App() {
     try {
       let crypto = await Fetch(Crypto_url, options);
       setResult(crypto.data);
-      let news = await Fetch(News_url, options);
+      let news = await Fetch(News_url, Noptions);
       setNews(news);
       setFlag(true);
     } catch (e) {
@@ -65,7 +72,7 @@ function App() {
                   element={<Home data={result} news={NewsResult} />}
                 />
                 <Route path="/about" element={<About />} />
-                <Route path="/news" element={<News data={NewsResult} limit={NewsResult.data.length}/>} />
+                <Route path="/news" element={<News data={NewsResult} limit={"100"}/>} />
 
                 <Route
                   path="/crypto"
