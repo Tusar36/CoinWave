@@ -18,7 +18,7 @@ function App() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+      "X-RapidAPI-Key": "179184fad1msh5e9059594f90047p1b0851jsn636d6159a65b",
       "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
     },
   };
