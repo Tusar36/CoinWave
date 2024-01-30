@@ -65,7 +65,7 @@ function App() {
             <div className=" sticky top-0 hidden md:block ">
               <Sidebar />
             </div>
-            <div className="w-[100%]">
+            <div className="w-[100%] overflow-hidden">
               <Routes>
                 <Route
                   path="/"
